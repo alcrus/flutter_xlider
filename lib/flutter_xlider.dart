@@ -441,6 +441,9 @@ class _FlutterSliderState extends State<FlutterSlider>
                 curve: Curves.fastOutSlowIn));
 
     WidgetsBinding.instance!.addPostFrameCallback((_) {
+      if (!mounted)
+        return;
+
       _renderBoxInitialization();
 
       _drawHatchMark();
